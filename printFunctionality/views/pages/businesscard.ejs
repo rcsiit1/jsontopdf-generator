@@ -1,0 +1,167 @@
+<link href="/styles/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="/styles/mycss.css" rel="stylesheet" id="bootstrap-css">
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<style>
+	.firstpage{
+		page-break-after: always;
+	}
+</style>
+<style>
+	@media print
+	{
+	  table.report { page-break-after:auto }
+	  table.report tr    { page-break-inside:avoid; page-break-after:auto }
+	  table.report td    { page-break-inside:avoid; page-break-after:auto }
+	  table.report thead { display:table-header-group;margin-top:20px; }
+	  
+	}
+	</style>
+
+
+<div class="container" style="position:relative;left:-314px;">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="invoice-title" style="position:relative;left:490px;top:350px;">
+				<h2>Invoice Order #
+					<%= data[0].invoice %>
+				</h2>
+			</div>
+			<hr class="firstpage"style="position:relative;left:315px;top:360px;">
+			<div class="row">
+				<div class="col-xs-6" style="position:relative;left:339px;top:100px;">
+					<address>
+						<strong>Billed To:</strong>
+						<br>
+						<%= data[0].billed_to.name %>
+							<br>
+							<%= data[0].billed_to.street %>
+								<br>
+								<%= data[0].billed_to.city %>
+									<br>
+					</address>
+					<address style="position:relative;left:353px;top:-66px;">
+						<strong>Shipped To:</strong>
+						<br>
+						<%= data[0].shipped_to.name %>
+							<br>
+							<%= data[0].shipped_to.street %>
+								<br>
+								<%= data[0].shipped_to.city %>
+									<br>
+
+					</address>
+				</div>
+				<div class="col-xs-6 text-right">
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6" style="position:relative;left:339px;top:50px;">
+					<address>
+						<strong>Payment Method:</strong>
+						<br>
+						<%= data[0].payment %>
+							<br>
+
+					</address>
+					<address style="position:relative;left:353px; top:-30px;">
+						<strong>Order Date:</strong>
+						<br>
+						<%= data[0].order_date%>
+							<br>
+							<br>
+					</address>
+				</div>
+				<div class="col-xs-6 text-right">
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title" style="color:red;position:relative;left:330px;">
+						<strong>Order summary</strong>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="table-responsive">
+						<table class="report" style="width:460px;position:relative;left:370px;padding:-2.25rem;">
+							<thead>
+								<tr>
+									<td>
+										<strong>Item</strong>
+									</td>
+									<td align="center">
+										<strong>Price</strong>
+									</td>
+									<td align="center">
+										<strong>Quantity</strong>
+									</td>
+									<td align="center">
+										<strong>Totals</strong>
+									</td>
+								</tr>
+							</thead>
+							<tbody>
+
+								<% data[0].transactions.forEach(function (products){ %>
+
+
+									<tr>
+										<td>
+											<%= products.item %>
+										</td>
+										<td align="center">
+											<%= products.price %>
+										</td>
+										<td align="center">
+											<%= products.quantity %>
+										</td>
+										<td align="center">
+											<%= products.total %>
+										</td>
+									</tr>
+									<% }) %>%>
+										<tr>
+											<td class="thick-line"></td>
+											<td class="thick-line"></td>
+											<td class="thick-line text-center">
+												<strong>Subtotal</strong>
+											</td>
+											<td class="thick-line text-right">
+												<%= data[0].subtotal %>
+											</td>
+										</tr>
+										<tr>
+											<td class="no-line"></td>
+											<td class="no-line"></td>
+											<td class="no-line text-center">
+												<strong>Shipping</strong>
+											</td>
+											<td class="no-line text-right">
+												<%= data[0].shipping %>
+											</td>
+										</tr>
+										<tr>
+											<td class="no-line"></td>
+											<td class="no-line"></td>
+											<td class="no-line text-center">
+												<strong>Total</strong>
+											</td>
+											<td class="no-line text-right">
+												<%= data[0].total %>
+											</td>
+										</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
