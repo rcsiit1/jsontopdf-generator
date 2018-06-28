@@ -150,7 +150,7 @@ var data = [
         'quantity': '4',
         'total': '40rs'
 
-      },{
+      }, {
         'item': 'Dabur toothpaste',
         'price': '10',
         'quantity': '4',
@@ -227,7 +227,7 @@ var data = [
         'quantity': '4',
         'total': '40rs'
 
-      },{
+      }, {
         'item': 'Dabur toothpaste',
         'price': '10',
         'quantity': '4',
@@ -302,8 +302,9 @@ const HtmltoPDF = async (req, res) => {
       res.json({ data: error });
     }
     else {
-      //res.view('pages/businesscard',{data:data});
-      res.view('pages/businesscard', { data: data });
+
+      //res.view('pages/businesscard', { data: data });
+      res.json({ success: success });
     }
   });
 };
