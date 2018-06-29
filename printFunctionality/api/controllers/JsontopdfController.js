@@ -180,6 +180,62 @@ var data = [
         'quantity': '4',
         'total': '40rs'
 
+      },
+      {
+        'item': 'Dabur toothpaste',
+        'price': '10',
+        'quantity': '4',
+        'total': '40rs'
+
+      },
+      {
+        'item': 'Dabur toothpaste',
+        'price': '10',
+        'quantity': '4',
+        'total': '40rs'
+
+      },
+      {
+        'item': 'Dabur toothpaste',
+        'price': '10',
+        'quantity': '4',
+        'total': '40rs'
+
+      },
+      {
+        'item': 'Dabur toothpaste',
+        'price': '10',
+        'quantity': '4',
+        'total': '40rs'
+
+      },
+      {
+        'item': 'Dabur toothpaste',
+        'price': '10',
+        'quantity': '4',
+        'total': '40rs'
+
+      },
+      {
+        'item': 'Dabur toothpaste',
+        'price': '10',
+        'quantity': '4',
+        'total': '40rs'
+
+      },
+      {
+        'item': 'Dabur toothpaste',
+        'price': '10',
+        'quantity': '4',
+        'total': '40rs'
+
+      },
+      {
+        'item': 'Dabur toothpaste',
+        'price': '10',
+        'quantity': '4',
+        'total': '40rs'
+
       }
     ],
     'subtotal': '200 rs',
